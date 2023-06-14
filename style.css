@@ -66,6 +66,7 @@ background-image: linear-gradient(to right, #1956b3, #0071c1, #0089c4, #009ebf, 
     }
     .buttons_container{
         display: flex;
+        margin-bottom: 3rem;
     }
     .btn{
         width: 100px;
