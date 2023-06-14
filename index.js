@@ -2,8 +2,8 @@ let randomize_array=document.getElementById('randomize_array_btn');
 let sort_btn=document.getElementById('sort_btn');
 let bars_container=document.getElementById('bars_container');
 let minRange=1;
-let maxRange=50;
-let numOfBars=50;
+let maxRange=40;
+let numOfBars=40;
 let heightFactor=6;
 
 let unsorted_array=new Array(numOfBars);
