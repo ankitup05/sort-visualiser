@@ -5,16 +5,16 @@ async function selection(array){
     // const ele=document.querySelectorAll('.sort');
     let bars=document.getElementsByClassName("bar");
 
-    for(let i=0; i<array.length-1; i++)
+    for(let i=0; i<numOfBars-1; i++)
     {
         let min_indx=i;
         // ele[i].style.background='red';
-        for(let j=i+1; j<array.length; j++)
+        for(let j=i+1; j<numOfBars; j++)
         {
 
             if(array[j]<array[min_indx])
             {
-                for(let k=0;k<array.length;k++)
+                for(let k=0;k<numOfBars;k++)
                 {
                     if(k!=i && k!=min_indx)
                     bars[k].style.backgroundColor="aqua";
@@ -38,7 +38,7 @@ async function selection(array){
         await sleep(100);
         
     }
-    for(let k=0;k<array.length;k++)
+    for(let k=0;k<numOfBars;k++)
         {
             // if(k!=i && k!=min_indx)
             bars[k].style.backgroundColor="darkblue";
