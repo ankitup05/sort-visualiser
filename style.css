@@ -27,7 +27,7 @@
 
 .buttons_container{
     position: absolute;
-    bottom: 2rem;
+    bottom: 3rem;
 }
 
 body{
@@ -64,29 +64,6 @@ object-fit:fill;
     background-color: #56697b;
 }
 
-.array_inputs{
-    display: flex;
-    flex-direction: column;
-    width: 200px;
-    height: 50px;
-    color: white;
-    border-radius: 5px;
-
-    /* transform: translateY(8rem); */
-    justify-content: center;
-    align-items: center;
-    gap: 7px;
-    background-color: #677685;
-    transition: 0.2s ease-in-out;
-    position: absolute;
-    bottom: 5rem;
-}
-.array_inputs:hover{
-    background-color: #56697b;
-}
-#a_size{
-    width: 60%;
-}
 
 @media screen and (max-width: 720px) {
     body {
@@ -100,7 +77,7 @@ object-fit:fill;
     
     .buttons_container{
         display: flex;
-        /* margin-bottom: 2rem; */
+        bottom: 3rem;
     }
     .btn{
         width: 100px;
@@ -108,18 +85,61 @@ object-fit:fill;
         margin: 1rem;
         font-size: 11px;
     }
-    .array_inputs{
+    #size_container,#speed_container{
         width: 150px;
-        height: 45px;
+        height: 40px;
         font-size: 13px;
-        bottom: 6rem;
+        /* bottom: 9rem; */
+        font-size: 12px;
     }
+    .array_inputs{
+        position: 9rem;
+    }
+    
+  }
+  .array_inputs{
+   display: flex;
+   position: absolute;
+   bottom: 7rem;
+   flex-direction: row;
+   align-items: center;
+   gap: 2rem;
+  }
+   .size_container{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 50px;
+    color: white;
+    border-radius: 5px;
+
+    /* transform: translateY(8rem); */
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+    background-color: #687887;
+    transition: 0.2s ease-in-out;
+    /* position: absolute; */
+    /* bottom: 5rem; */
+    /* left: 10rem; */
   }
 
-  #size_info_container{
+   .size_container:hover{
+    background-color: #56697b;
+
+  }
+  .info_container{
     display: flex;
   }
 
   #array_size{
     margin-left: 2px;
   }
+  #speed{
+    margin-left: 2px;
+  }  
+  .a_size{
+    width: 70%;
+}
+
+ 

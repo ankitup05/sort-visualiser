@@ -11,21 +11,44 @@
       <div class="bars_container" id="bars_container"></div>
 
       <div class="array_inputs">
-        <div id="size_info_container">
+        <!--  -->
+        <div class="size_container" id="size_container">
+          
+          <div class="info_container" id="size_info_container">
             <p>Size of the array:</p>
             <span id="array_size"></span>
-        </div>
+          </div>
         
-        <input
-          id="a_size"
-          type="range"
-          min="10"
-          max="80"
-          step="1"
-        />
-        <!-- <p>Speed of the algorithm:</p> -->
-        <!-- <input id="a_speed" type="range" min="1" max="5" step="1" value="4"> -->
-        <!-- <button id="a_generate">Generate New Array!</button> -->
+          <input
+            class="a_size"
+            id="a_size"
+            type="range"
+            min="10"
+            max="80"
+            step="1"
+          />
+
+        </div>
+        <!--  -->
+        <div class="size_container" id="speed_container">
+          
+          <div class="info_container" id="speed_info_container">
+            <p>Speed of Sorting:</p>
+            <span id="speed"></span>
+            <span>ms</span>
+          </div>
+        
+          <input
+            class="a_size"
+            id="a_speed"
+            type="range"
+            min="10"
+            max="1010"
+            step="20"
+          />
+
+        </div>
+
       </div>
 
       <div class="buttons_container">

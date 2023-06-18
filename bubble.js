@@ -1,7 +1,8 @@
-let sort_btn=document.getElementById('bubble_sort_btn');
-
+let bubble_sort_btn=document.getElementById('bubble_sort_btn');
+// let speed=30;
 async function bubbleSort(array) {
     let bars=document.getElementsByClassName("bar");
+    butt_disable();
     for(let k=0;k<numOfBars;k++)
     {
         // if(k!=i && k!=min_indx)
@@ -12,7 +13,7 @@ async function bubbleSort(array) {
         
         for(let j=0;j<numOfBars-i-1;j++)
         {
-            await sleep(30);
+            await sleep(speed);
             for(let k=0;k<numOfBars-i-1;k++)
                 {
                     if(k!=j && k!=j+1)
@@ -34,12 +35,12 @@ async function bubbleSort(array) {
 
                 bars[j+1].style.height=array[j+1]*heightFactor +'px';
                 // bars[j+1].style.backgroundColor="lightgreen";
-                await sleep(30);
+                await sleep(speed);
             }
             
 
         }
-        await sleep(30);
+        await sleep(speed);
         if(numOfBars-i-2>=0)
         bars[numOfBars-i-2].style.backgroundColor="aqua";
         bars[numOfBars-i-1].style.backgroundColor="darkblue";
@@ -49,10 +50,11 @@ async function bubbleSort(array) {
         // if(k!=i && k!=min_indx)
         bars[k].style.backgroundColor="darkblue";
     }
+    butt_enable();
     return array;
 }
 
-sort_btn.addEventListener("click", function() {
+bubble_sort_btn.addEventListener("click", function() {
     let sorted_array=  bubbleSort(unsorted_array);
     console.log(sorted_array);
 })

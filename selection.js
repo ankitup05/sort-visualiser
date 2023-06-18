@@ -1,28 +1,44 @@
 let selection_sort_btn=document.getElementById('selection_sort_btn');
 
-
+// let speed=50;
 async function selection(array){
-    // const ele=document.querySelectorAll('.sort');
     let bars=document.getElementsByClassName("bar");
+    butt_disable();
+
+    for(let k=0;k<numOfBars;k++)
+    {
+        bars[k].style.backgroundColor="aqua";
+    }
 
     for(let i=0; i<numOfBars-1; i++)
     {
         let min_indx=i;
-        // ele[i].style.background='red';
+        await sleep(speed);
+        for(let k=i;k<numOfBars;k++)
+        {
+            bars[k].style.backgroundColor="aqua";
+        }
+        
+        bars[min_indx].style.backgroundColor="green";
+
         for(let j=i+1; j<numOfBars; j++)
         {
-
+            
+            bars[j].style.backgroundColor="red";
             if(array[j]<array[min_indx])
             {
-                for(let k=0;k<numOfBars;k++)
-                {
-                    if(k!=i && k!=min_indx)
-                    bars[k].style.backgroundColor="aqua";
-                }
+                if(min_indx!=i)
+                bars[min_indx].style.backgroundColor="aqua";
+
                 min_indx=j;
             }
+            await sleep(speed);
+            bars[j].style.backgroundColor="aqua";
+            if(min_indx!=i)
+            bars[min_indx].style.backgroundColor="yellow";
+
         }
-        await sleep(100);
+        await sleep(speed);
         if(min_indx!=i)
         {
             let temp=array[min_indx];
@@ -30,19 +46,14 @@ async function selection(array){
             array[i]=temp;
             
             bars[i].style.height=array[i]*heightFactor +'px';
-            bars[i].style.backgroundColor="red";
 
             bars[min_indx].style.height=array[min_indx]*heightFactor +'px';
-            bars[min_indx].style.backgroundColor="red";
         }
-        await sleep(100);
-        
+        await sleep(speed);
+        bars[i].style.backgroundColor="darkblue";
     }
-    for(let k=0;k<numOfBars;k++)
-        {
-            // if(k!=i && k!=min_indx)
-            bars[k].style.backgroundColor="darkblue";
-        }
+    bars[numOfBars-1].style.backgroundColor="darkblue";
+    butt_enable();
     return array;
 }
 
